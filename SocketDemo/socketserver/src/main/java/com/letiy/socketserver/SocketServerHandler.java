@@ -8,11 +8,11 @@ import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class SocketHandle implements Runnable {
-	private static Logger logger = LoggerFactory.getLogger(SocketHandle.class);
+public class SocketServerHandler implements Runnable {
+	private static Logger logger = LoggerFactory.getLogger(SocketServerHandler.class);
 	private Socket socket = null;
 
-	public SocketHandle(Socket socket) {
+	public SocketServerHandler(Socket socket) {
 		this.socket = socket;
 	}
 

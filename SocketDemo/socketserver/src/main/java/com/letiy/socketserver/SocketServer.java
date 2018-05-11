@@ -22,7 +22,7 @@ public class SocketServer {
 		this.port = port;
 	}
 
-	public void startServer() {
+	public void run() {
 		ServerSocket serverSocket = null;
 		try {
 			serverSocket = new ServerSocket(port);
@@ -34,7 +34,7 @@ public class SocketServer {
 				logger.info("listening request...");
 				Socket socket = serverSocket.accept();
 
-				executorService.submit(new SocketHandle(socket));
+				executorService.submit(new SocketServerHandler(socket));
 			}
 		} catch (Exception e) {
 
